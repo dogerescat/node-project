@@ -11,25 +11,38 @@
         <a href="/login">login</a>
       </header>
       <p>register</p>
-      <table>
-        <tr>
-          <td>Name</td>
-          <td><input type="text" placeholder="Name" /></td>
-        </tr>
-        <tr>
-          <td>E-Mail Address</td>
-          <td><input type="email" placeholder="email" /></td>
-        </tr>
-        <tr>
-          <td>Password</td>
-          <td><input type="password" placeholder="password" /></td>
-        </tr>
-        <tr>
-          <td>Confirm Password</td>
-          <td><input type="password" placeholder="password" /></td>
-        </tr>
-      </table>
-      <button>Register</button>
+      <form action="/dashboard">
+        <table>
+          <tr>
+            <td>Name</td>
+            <td><input name="name" type="text" placeholder="Name" /></td>
+          </tr>
+          <tr>
+            <td>E-Mail Address</td>
+            <td><input name="email" type="email" placeholder="email" /></td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td>
+              <input name="password" type="password" placeholder="password" />
+            </td>
+          </tr>
+          <tr>
+            <td>Confirm Password</td>
+            <td>
+              <input name="confirm" type="password" placeholder="password" />
+            </td>
+          </tr>
+        </table>
+        <input type="submit" value="register" />
+      </form>
+      <% if (messageNumber === 1) { %>
+      <p>全て入力してください</p>
+      <% } else if (messageNumber === 2) { %>
+      <p>パスワードは７文字以上に設定してください</p>
+      <% } else if (messageNumber === 3) { %>
+      <p>パスワードが一致しません</p>
+      <% } %>
     </div>
   </body>
 </html>
