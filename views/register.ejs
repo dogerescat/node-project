@@ -36,13 +36,7 @@
         </table>
         <input type="submit" value="register" />
       </form>
-      <% if (messageNumber === 1) { %>
-      <p>全て入力してください</p>
-      <% } else if (messageNumber === 2) { %>
-      <p>パスワードは７文字以上に設定してください</p>
-      <% } else if (messageNumber === 3) { %>
-      <p>パスワードが一致しません</p>
-      <% } %>
+      <%= error %>
     </div>
   </body>
 </html>
